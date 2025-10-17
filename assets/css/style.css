@@ -1,9 +1,8 @@
 @charset "UTF-8";
+
 /* =============================== */
-/* 0. SASS Variabili e Reset */
+/* 0. Reset e Stili Base */
 /* =============================== */
-/* Variabili SASS: Sostituiscono il blocco :root */
-/* Reset universale */
 * {
   margin: 0;
   padding: 0;
@@ -13,14 +12,14 @@
 body {
   font-family: "Arial", sans-serif;
   line-height: 1.6;
-  background-color: #4b4b4b;
+  background-color: #4b4b4b; /* Grigio scuro di sfondo */
   color: #f5f5f5;
   min-height: 100vh;
 }
 
-/* Link (Usa Nesting) */
+/* Link */
 a {
-  color: #ffcc00;
+  color: #ffcc00; /* Giallo/Oro per i link */
   text-decoration: none;
   transition: color 0.3s;
 }
@@ -55,10 +54,10 @@ hr {
 }
 
 /* =============================== */
-/* 2. HEADER E NAVIGAZIONE (Usa Nesting) */
+/* 2. HEADER E NAVIGAZIONE */
 /* =============================== */
 header {
-  background-color: #6b8e23;
+  background-color: #6b8e23; /* Verde Scuro per l'header/footer */
   padding: 15px 20px;
   display: flex;
   justify-content: space-between;
@@ -74,12 +73,18 @@ header .logo h1 {
   font-size: 1.5em;
   line-height: 1;
 }
+
+/* --- CORREZIONE PERCORSO LOGO --- */
 header .site-logo {
   width: 40px;
   height: 40px;
   margin-right: 15px;
   border-radius: 50%;
+  /* Il logo non è qui. Se è un'immagine: */
+  /* Se nel tuo HTML hai <img class="site-logo" src="assets/logo.png">, questo è solo lo stile. */
 }
+/* --- FINE CORREZIONE --- */
+
 header nav ul {
   list-style: none;
   display: flex;
@@ -129,7 +134,7 @@ header nav ul li a:hover {
 }
 
 /* =============================== */
-/* 5. SEZIONE PORTFOLIO (PROGETTI) - FIX ALLINEAMENTO BOTTONI */
+/* 5. SEZIONE PORTFOLIO (PROGETTI) */
 /* =============================== */
 .row.projects-grid {
   margin-right: 0 !important;
@@ -147,7 +152,7 @@ header nav ul li a:hover {
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
   margin: 0;
   width: 100%;
-  display: flex; /* Rende la card un contenitore Flex */
+  display: flex;
   flex-direction: column;
 }
 .row.projects-grid .project-card > div {
@@ -164,13 +169,12 @@ header nav ul li a:hover {
   width: 100%;
   height: auto;
   max-height: 200px;
-  -o-object-fit: cover;
-     object-fit: cover;
+  object-fit: cover;
   border-radius: 5px;
   margin-bottom: 15px;
 }
 
-/* *** STILE BOTTONI UNIFICATO (project-link) *** */
+/* *** STILE BOTTONI UNIFICATO *** */
 .project-link {
   background-color: #ffcc00;
   color: #6b8e23;
@@ -246,6 +250,7 @@ footer {
     flex-direction: column;
   }
 }
+
 /* =============================== */
 /* 8. STILE CV (CURRICULUM VITAE) */
 /* =============================== */
@@ -292,7 +297,7 @@ footer {
 }
 
 /* =============================== */
-/* 9. STILE FORM CONTATTI (FIX INPUT WIDTH) */
+/* 9. STILE FORM CONTATTI */
 /* =============================== */
 .contact-form-container {
   max-width: 800px;
@@ -309,7 +314,6 @@ footer {
   gap: 15px;
   text-align: left;
   margin-top: 30px;
-  /* Il bottone di invio usa lo stile project-link e deve essere allineato diversamente */
 }
 .contact-form .form-group {
   display: flex;
@@ -344,9 +348,9 @@ footer {
   resize: vertical;
 }
 .contact-form .project-link {
-  align-self: flex-start; /* Allinea solo il bottone a sinistra */
+  align-self: flex-start;
   margin-top: 20px;
-  width: auto; /* Permette al bottone di non essere largo il 100% */
+  width: auto;
 }
 
 .contact-info {
@@ -356,4 +360,4 @@ footer {
 }
 .contact-info h3 {
   margin-bottom: 10px;
-}/*# sourceMappingURL=style.css.map */
+}
