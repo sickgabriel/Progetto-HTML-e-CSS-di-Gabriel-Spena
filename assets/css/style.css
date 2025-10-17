@@ -1,0 +1,359 @@
+@charset "UTF-8";
+/* =============================== */
+/* 0. SASS Variabili e Reset */
+/* =============================== */
+/* Variabili SASS: Sostituiscono il blocco :root */
+/* Reset universale */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: "Arial", sans-serif;
+  line-height: 1.6;
+  background-color: #4b4b4b;
+  color: #f5f5f5;
+  min-height: 100vh;
+}
+
+/* Link (Usa Nesting) */
+a {
+  color: #ffcc00;
+  text-decoration: none;
+  transition: color 0.3s;
+}
+a:hover {
+  color: #f5f5f5;
+}
+
+/* =============================== */
+/* 1. LAYOUT PRINCIPALE */
+/* =============================== */
+main {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 20px;
+}
+
+section {
+  padding: 60px 20px;
+  margin-bottom: 20px;
+}
+
+h1, h2, h3 {
+  margin-bottom: 20px;
+  color: #f5f5f5;
+}
+
+hr {
+  border: 0;
+  height: 1px;
+  background: rgba(255, 255, 255, 0.2);
+  margin: 40px 0;
+}
+
+/* =============================== */
+/* 2. HEADER E NAVIGAZIONE (Usa Nesting) */
+/* =============================== */
+header {
+  background-color: #6b8e23;
+  padding: 15px 20px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+}
+header .logo {
+  display: flex;
+  align-items: center;
+}
+header .logo h1 {
+  margin: 0;
+  font-size: 1.5em;
+  line-height: 1;
+}
+header .site-logo {
+  width: 40px;
+  height: 40px;
+  margin-right: 15px;
+  border-radius: 50%;
+}
+header nav ul {
+  list-style: none;
+  display: flex;
+}
+header nav ul li a {
+  color: #f5f5f5;
+  padding: 10px 15px;
+  display: block;
+}
+header nav ul li a:hover {
+  background-color: rgba(255, 255, 255, 0.1);
+}
+
+/* =============================== */
+/* 3. SEZIONE HERO (HOME) */
+/* =============================== */
+.hero {
+  text-align: center;
+  padding: 100px 20px;
+  background-color: rgba(0, 0, 0, 0.1);
+}
+.hero p {
+  font-size: 1.2em;
+  margin-bottom: 30px;
+}
+
+/* =============================== */
+/* 4. SEZIONE BIO (ABOUT) */
+/* =============================== */
+.bio-content {
+  display: flex;
+  gap: 40px;
+  flex-wrap: wrap;
+}
+
+.bio-text {
+  flex: 2;
+  min-width: 300px;
+}
+
+.skills-list {
+  flex: 1;
+  list-style: disc;
+  margin-left: 20px;
+  min-width: 200px;
+  padding-top: 10px;
+}
+
+/* =============================== */
+/* 5. SEZIONE PORTFOLIO (PROGETTI) - FIX ALLINEAMENTO BOTTONI */
+/* =============================== */
+.row.projects-grid {
+  margin-right: 0 !important;
+  margin-left: 0 !important;
+  margin-top: 30px;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 30px;
+}
+.row.projects-grid .project-card {
+  background-color: #6b8e23;
+  padding: 20px;
+  border-radius: 8px;
+  text-align: center;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+  margin: 0;
+  width: 100%;
+  display: flex; /* Rende la card un contenitore Flex */
+  flex-direction: column;
+}
+.row.projects-grid .project-card > div {
+  display: flex;
+  flex-direction: column;
+  flex-grow: 1;
+}
+.row.projects-grid .project-card > div .card-text {
+  flex-grow: 1;
+  margin-bottom: 15px;
+}
+
+.project-img {
+  width: 100%;
+  height: auto;
+  max-height: 200px;
+  -o-object-fit: cover;
+     object-fit: cover;
+  border-radius: 5px;
+  margin-bottom: 15px;
+}
+
+/* *** STILE BOTTONI UNIFICATO (project-link) *** */
+.project-link {
+  background-color: #ffcc00;
+  color: #6b8e23;
+  padding: 12px 25px;
+  border-radius: 5px;
+  font-weight: bold;
+  display: inline-block;
+  margin-top: auto;
+  border: none;
+  outline: none;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+.project-link:hover {
+  background-color: #ffcc00;
+  color: #f5f5f5;
+  transform: translateY(-2px);
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.4);
+}
+
+/* =============================== */
+/* 6. SEZIONE CONTATTI E FOOTER */
+/* =============================== */
+.contact-me {
+  text-align: center;
+}
+
+.email-link {
+  font-size: 1.5em;
+  font-weight: bold;
+  display: block;
+  margin: 20px 0 30px 0;
+}
+
+.social-links a {
+  margin: 0 10px;
+  font-size: 1.1em;
+}
+
+footer {
+  text-align: center;
+  padding: 20px;
+  background-color: #6b8e23;
+  font-size: 0.9em;
+}
+
+/* =============================== */
+/* 7. MEDIA QUERIES (Responsività) */
+/* =============================== */
+@media (max-width: 768px) {
+  header {
+    position: fixed;
+    top: 0;
+    width: 100%;
+    z-index: 1000;
+    flex-direction: column;
+    padding: 10px 20px;
+  }
+  body {
+    padding-top: 120px;
+  }
+  nav ul {
+    margin-top: 10px;
+    justify-content: center;
+  }
+  nav ul li a {
+    padding: 8px 10px;
+  }
+  .hero {
+    padding: 60px 10px;
+  }
+  .bio-content {
+    flex-direction: column;
+  }
+}
+/* =============================== */
+/* 8. STILE CV (CURRICULUM VITAE) */
+/* =============================== */
+.cv-page {
+  background-color: #6b8e23;
+  padding: 40px;
+  border-radius: 8px;
+}
+
+.cv-section {
+  margin-bottom: 30px;
+  padding-bottom: 15px;
+  border-bottom: 1px dashed rgba(255, 255, 255, 0.3);
+}
+.cv-section h3 {
+  color: #ffcc00;
+  border-left: 5px solid #ffcc00;
+  padding-left: 10px;
+  margin-bottom: 15px;
+}
+.cv-section ul {
+  list-style: none;
+  padding-left: 0;
+}
+.cv-section ul li {
+  margin-bottom: 5px;
+  padding-left: 20px;
+  position: relative;
+}
+.cv-section ul li::before {
+  content: "→";
+  position: absolute;
+  left: 0;
+  color: #ffcc00;
+}
+
+.cv-item {
+  margin-bottom: 15px;
+  padding-left: 10px;
+}
+.cv-item h4 {
+  margin-bottom: 5px;
+  font-size: 1.1em;
+}
+
+/* =============================== */
+/* 9. STILE FORM CONTATTI (FIX INPUT WIDTH) */
+/* =============================== */
+.contact-form-container {
+  max-width: 800px;
+  margin: 0 auto;
+  background-color: #6b8e23;
+  padding: 40px;
+  border-radius: 8px;
+  text-align: center;
+}
+
+.contact-form {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+  text-align: left;
+  margin-top: 30px;
+  /* Il bottone di invio usa lo stile project-link e deve essere allineato diversamente */
+}
+.contact-form .form-group {
+  display: flex;
+  flex-direction: column;
+}
+.contact-form label {
+  margin-bottom: 5px;
+  font-weight: bold;
+  color: #f5f5f5;
+}
+.contact-form input[type=text],
+.contact-form input[type=email],
+.contact-form input[type=submit],
+.contact-form textarea {
+  width: 100%;
+  padding: 12px;
+  border: 1px solid #ffcc00;
+  border-radius: 4px;
+  background-color: #4b4b4b;
+  color: #f5f5f5;
+  font-size: 1em;
+  transition: border-color 0.3s;
+}
+.contact-form input[type=text]:focus,
+.contact-form input[type=email]:focus,
+.contact-form input[type=submit]:focus,
+.contact-form textarea:focus {
+  border-color: #f5f5f5;
+  outline: none;
+}
+.contact-form textarea {
+  resize: vertical;
+}
+.contact-form .project-link {
+  align-self: flex-start; /* Allinea solo il bottone a sinistra */
+  margin-top: 20px;
+  width: auto; /* Permette al bottone di non essere largo il 100% */
+}
+
+.contact-info {
+  margin-top: 40px;
+  padding-top: 20px;
+  border-top: 1px dashed rgba(255, 255, 255, 0.3);
+}
+.contact-info h3 {
+  margin-bottom: 10px;
+}/*# sourceMappingURL=style.css.map */
